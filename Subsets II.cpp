@@ -24,18 +24,18 @@ public:
         if(i >= nums.size())
             return;
 
-        // Ñ¡Ôñµ±Ç°ÔªËØ£¬ÏòºóÃæÒª k - 1 ¸öÔªËØ
-        // ±£Ö¤Ò»¶¨ÓÐ½á¹û
+        // 选择当前元素，向后面要 k - 1 个元素
+        // 保证一定有结果
         curr.push_back(nums[i]);
         _subsetsWithDup(result,nums,curr,i + 1,k - 1);
         curr.pop_back();
 
-        // ÏÂÒ»¸öÔªËØ±ØÐë¸ú¸Õ²ÅÑ¡ÔñµÄ²»Í¬
-        // ±£Ö¤²»»áÓÐÏàÍ¬Â·¾¶
+        // 下一个元素必须跟刚才选择的不同
+        // 保证不会有相同路径
         int a = nums[i];
         while(i < nums.size() && nums[i] == a)
             i++;
-        // ÒªÃ´Ô½½ç£¬ÒªÃ´ÕÒµ½ÁË²»Í¬ÔªËØ
+        // 要么越界，要么找到了不同元素
         return _subsetsWithDup(result,nums,curr,i,k);
 
 

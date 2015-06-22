@@ -26,7 +26,7 @@ public:
                 iter_swap(nums.begin() + i,nums.begin() + j);
         }
 
-        // j Îª×îºóÒ»¸ö target µÄÏÂÒ»¸öÎ»ÖÃ
+        // j 为最后一个 target 的下一个位置
         return j + 1;
     }
 };

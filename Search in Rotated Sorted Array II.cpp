@@ -7,11 +7,11 @@ public:
         int j = nums.size() - 1;
 
         
-        // ÕÒµ½×î×ó±ß±Ènums[0]´óµÄ
+        // 找到最左边比nums[0]大的
         while(j >= 0 && nums[j] <= m)
             j--;
         // 33112
-        // »®·Ö³É×óÓÒ´óÐ¡Êý×é
+        // 划分成左右大小数组
         if(j >= 0)
         {
             vector<int> big(nums.begin(),nums.begin() + j + 1);
@@ -20,19 +20,19 @@ public:
         }
 
         // 333333
-        // ´Ó×óµ½ÓÒÕÒ±Ènums[0]Ð¡µÄ£¬»®·Ö³ÉÁ½¸öÊý×é
+        // 从左到右找比nums[0]小的，划分成两个数组
         j = 0;
         while(j < nums.size() && nums[j] >= nums[0])
             j++;
         if(j == nums.size())
         {
-            // ÕÒ²»µ½£¬ËµÃ÷Êý×éÓÐÐò
+            // 找不到，说明数组有序
             return binSearch(nums,target);
         }
         else
         {
             // 331133
-            // »®·Ö³ÉÁ½¸öÊý×é
+            // 划分成两个数组
             vector<int> big(nums.begin(),nums.begin() + j);
             vector<int> small(nums.begin() + j,nums.end());
             return binSearch(big,target) || binSearch(small,target);

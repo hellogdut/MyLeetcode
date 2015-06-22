@@ -19,7 +19,7 @@ private:
         if(i >= s.size() || k < 0)
             return;
         
-        // Ñ¹Èë1¸ö
+        // 压入1个
         curr.push_back(s[i]);
         if(k != 1)
             curr.push_back('.');
@@ -27,7 +27,7 @@ private:
         if(curr.back() == '.')
             curr.pop_back();
         curr.pop_back();
-        // Ñ¹Èë2¸ö
+        // 压入2个
         if(i <= s.size() - 2)
         {
             if(s[i] == '0')

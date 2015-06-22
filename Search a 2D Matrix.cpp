@@ -7,7 +7,7 @@ public:
         int low = 0;
         int high = size - 1;
 
-        // µ±³ÉÒ»¸öÁ¬ÐøµÄvector,È»ºó¶þ·Ö²éÕÒ
+        // 当成一个连续的vector,然后二分查找
         while(low <= high)
         {
             int mid = (high - low)/2 + low;
